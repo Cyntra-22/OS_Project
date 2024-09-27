@@ -1,5 +1,7 @@
 <script lang="ts">
     import Navbar from "$lib/Navbar.svelte";
+    import { page } from "$app/stores";
+
 </script>
 <style>
     :root{
@@ -23,7 +25,10 @@
 
     }
 </style>
-<Navbar/>
+{#if $page.url.pathname !== '/score'} 
+    <Navbar />
+{/if}
+
 <div class="main-container">
         <slot/>
 </div>  

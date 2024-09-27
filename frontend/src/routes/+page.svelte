@@ -1,5 +1,10 @@
-<script>
+<script lang='ts'>
+    import { goto } from "$app/navigation";
 
+    function handleGenerate( event: Event){
+        event.preventDefault();
+        goto('/practice');
+    }
 </script>
 <style>
     .container {
@@ -28,7 +33,6 @@
        
     }
 
-    /* Textarea styling */
     textarea {
         width: 95%;
         height: 250px;
@@ -37,11 +41,10 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         resize: none;
-        overflow-y: auto; /* Vertical scroll */
+        overflow-y: auto;
         margin-bottom: 20px;
     }
 
-    /* Form group container */
     .form-group {
         display: flex;
         justify-content: space-around;
@@ -49,7 +52,6 @@
         width: 100%;
     }
 
-    /* Dropdown styles */
     select {
         width: 30%;
         padding: 10px;
@@ -59,7 +61,6 @@
         background-color: #f9f9f9;
     }
 
-    /* Button styling */
     button {
         padding: 0.7rem 2.5rem;
         font-size: 1rem;
@@ -71,12 +72,10 @@
         transition: background-color 0.3s;
     }
 
-    /* Button hover effect */
     button:hover {
         background-color: #0056b3;
     }
 
-    /* Media query for mobile responsiveness */
     @media (max-width: 768px) {
         .form-group {
             flex-direction: column;
@@ -99,13 +98,10 @@
     <h1>Welcome To Quiz Portal!</h1>
     <p>"Can Generate Quiz and Practice"</p>
     
-    <form id="quiz-form">
-        <!-- Text area for typing content -->
+    <form id="quiz-form" on:submit={handleGenerate}>
         <textarea id="quiz-text" name="quiz-text" placeholder="Type Here..." rows="6"></textarea>
         
-        <!-- Dropdowns and Generate button -->
         <div class="form-group">
-            <!-- Number of Questions Dropdown -->
             <select id="num-questions" name="num-questions">
                 <option value="" disabled selected>No of Questions</option>
                 <option value="5">5 Questions</option>
@@ -113,8 +109,7 @@
                 <option value="15">15 Questions</option>
                 <option value="20">20 Questions</option>
             </select>
-            
-            <!-- Difficulty Level Dropdown -->
+               
             <select id="difficulty" name="difficulty">
                 <option value="" disabled selected>Difficulty Level</option>
                 <option value="easy">Easy</option>
@@ -122,8 +117,7 @@
                 <option value="hard">Hard</option>
             </select>
             
-            <!-- Generate Button -->
-            <button type="submit">Generate ➔</button>
+            <button type="submit" >Generate ➔</button>
         </div>
     </form>
 </div>
