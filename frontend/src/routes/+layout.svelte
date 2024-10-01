@@ -25,7 +25,7 @@
 
     }
 </style>
-{#if $page.url.pathname !== '/score' && $page.url.pathname !== '/login' && $page.url.pathname !== '/signup'} 
+{#if $page.url.pathname !== '/score' && $page.url.pathname !== '/login' && $page.url.pathname !== '/signup'  && $page.url.pathname !== '/view'} 
     <Navbar />
 {/if}
 

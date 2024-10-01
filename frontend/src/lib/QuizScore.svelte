@@ -1,5 +1,9 @@
 <script lang="ts">
+    import { goto } from "$app/navigation";
 
+    function handleView(){
+        goto('/view');
+    }
 </script>
 <style>
      .quiz-item {
@@ -59,7 +63,7 @@
 <div class="quiz-item">
     <div class="quiz-title">Quiz 1</div>
     <div>
-        <button class="view-btn">View</button>
+        <button class="view-btn" on:click={handleView}>View</button>
     </div>
     <div>
         <button class="del-btn">Del</button>
