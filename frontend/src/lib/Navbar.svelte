@@ -105,7 +105,7 @@
         <div class="desktop-nav">
             <ul>
                 <li><a class:active={routeId === "/"} href="/">Home</a></li>
-                <li><a class:active={routeId === "/profile"} href="/profile">Profile</a></li>    
+                <li><a class:active={routeId === "/login"} href="/signup">Login</a></li>    
 
             </ul>
         </div>
@@ -119,7 +119,7 @@
                 </button>
                 <ul>
                     <li><a class:active={routeId === "/"} href="/">Home</a></li>
-                    <li><a class:active={routeId === "/profile"} href="/profile">Profile</a></li>     
+                    <li><a class:active={routeId === "/login"} href="/login">Login</a></li>  
                 </ul>
             </div>
         </div>
